@@ -1,50 +1,76 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".site-header");
+
+    function updateHeader() {
+        header.classList.toggle("scrolled", window.scrollY > 30);
+    }
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    // Scroll reveal
+    const revealItems = document.querySelectorAll(".video-card, .gallery button, .skill");
+
+    if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("reveal", "visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add("reveal", "visible"));
+    }
+
+    // Vimeo: muted autoplay while the project is in view.
     const cards = document.querySelectorAll(".video-card");
 
-    cards.forEach(card => {
+    cards.forEach((card) => {
         const iframe = card.querySelector("iframe");
 
         if (!iframe || typeof Vimeo === "undefined") return;
 
         const player = new Vimeo.Player(iframe);
 
-        // 静音，确保浏览器允许自动播放
         player.setVolume(0).catch(() => {});
 
-        // 视频进入屏幕时播放，离开时暂停
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
-                        player.play().catch(() => {});
-                    } else {
-                        player.pause().catch(() => {});
-                    }
-                });
-            },
-            {
-                threshold: [0, 0.55, 1]
-            }
-        );
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+                    player.play().catch(() => {});
+                } else {
+                    player.pause().catch(() => {});
+                }
+            });
+        }, {
+            threshold: [0, 0.55, 1]
+        });
 
         observer.observe(card);
     });
 });
 
-
-// 图片放大
+// Image lightbox
 function openLightbox(imageSrc) {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
 
-    lightbox.style.display = "block";
     lightboxImg.src = imageSrc;
+    lightbox.classList.add("is-open");
+    document.body.style.overflow = "hidden";
 }
 
-
-// 关闭图片放大
 function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
 
-    lightbox.style.display = "none";
+    lightbox.classList.remove("is-open");
+    document.body.style.overflow = "";
 }
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLightbox();
+});
