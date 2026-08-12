@@ -26,16 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         revealItems.forEach((item) => item.classList.add("reveal", "visible"));
     }
 
-    // Vimeo: muted autoplay while the project is in view.
-    const cards = document.querySelectorAll(".video-card");
+    // Vimeo: autoplay only the first featured project to keep the page light.
+    const featuredCard = document.querySelector(".video-card");
+    const featuredIframe = featuredCard?.querySelector("iframe");
 
-    cards.forEach((card) => {
-        const iframe = card.querySelector("iframe");
-
-        if (!iframe || typeof Vimeo === "undefined") return;
-
-        const player = new Vimeo.Player(iframe);
-
+    if (featuredIframe && typeof Vimeo !== "undefined") {
+        const player = new Vimeo.Player(featuredIframe);
         player.setVolume(0).catch(() => {});
 
         const observer = new IntersectionObserver((entries) => {
@@ -46,12 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     player.pause().catch(() => {});
                 }
             });
-        }, {
-            threshold: [0, 0.55, 1]
-        });
+        }, { threshold: [0, 0.55, 1] });
 
-        observer.observe(card);
-    });
+        observer.observe(featuredCard);
+    }
 });
 
 // Image lightbox
