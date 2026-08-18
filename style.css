@@ -1440,3 +1440,16 @@ footer a {
         padding: 22px;
     }
 }
+.skill-icon-text {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 40px;
+    border-radius: 8px;
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
