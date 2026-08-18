@@ -107,10 +107,15 @@ a {
 
 .site-header nav {
     display: flex;
+    align-items: center;
     gap: 30px;
     font: .68rem "DM Mono", monospace;
     text-transform: uppercase;
     letter-spacing: .08em;
+}
+
+.site-header .header-language {
+    justify-self: end;
 }
 
 .site-header nav a {
