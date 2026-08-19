@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-v2.css?v=20260819-10">
     <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 
@@ -37,7 +37,7 @@
 <main id="top">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="hero-top">
             <span>CHARACTER ANIMATION / 3D ART / STORYTELLING</span>
             <div class="hero-location">
@@ -47,29 +47,22 @@
         </div>
 
         <div class="hero-center">
-            <div class="pose-sequence" aria-hidden="true">
-                <svg viewBox="0 0 520 250" role="presentation">
-                    <g class="pose pose--ghost" transform="translate(30 34) rotate(-7 70 100)">
-                        <circle cx="70" cy="24" r="18"/><path d="M70 43 L74 111 M73 64 L28 91 M73 65 L117 48 M74 111 L42 173 M74 111 L112 165"/>
-                    </g>
-                    <g class="pose pose--middle" transform="translate(190 22) rotate(3 70 100)">
-                        <circle cx="70" cy="24" r="18"/><path d="M70 43 L70 111 M70 63 L31 44 M70 63 L112 87 M70 111 L35 160 M70 111 L120 144"/>
-                    </g>
-                    <g class="pose pose--key" transform="translate(355 25) rotate(8 70 100)">
-                        <circle cx="70" cy="24" r="18"/><path d="M70 43 L66 111 M68 65 L27 93 M68 65 L119 72 M66 111 L23 144 M66 111 L101 178"/>
-                    </g>
-                </svg>
-                <span>KEY POSE · BREAKDOWN · FINAL POSE</span>
-            </div>
-            <p class="eyebrow"><span class="palette-dot"></span> Animation Portfolio · 2026</p>
+            <p class="eyebrow"><span class="palette-dot"></span> 01 · About me</p>
             <h1>
                 <span>Jiayu</span>
                 <span class="outline">Zhao</span>
             </h1>
-            <p class="hero-description">
-                Character animation and 3D art student creating expressive
-                performances, believable movement and story-driven visuals.
-            </p>
+            <div class="hero-about">
+                <div class="hero-about-copy">
+                    <p class="hero-about-lead">I create character-driven animation where movement, emotion and story work together.</p>
+                    <p>I am Jiayu Zhao, a 3D animation student at the Communication University of China, graduating in July 2028. Born in Budapest and based between Budapest and Beijing, I bring a cross-cultural perspective to visual storytelling and work in Chinese, English and Hungarian.</p>
+                    <p class="hero-about-detail">My focus is character animation—observing acting, refining body mechanics and shaping believable performances. Experience across modeling, rigging, texturing, lighting and post-production gives me an understanding of the wider 3D pipeline. I am seeking internships where I can contribute, learn and grow as a character animator.</p>
+                    <div class="hero-about-meta">
+                        <div><span>Based between</span><strong>Beijing · Budapest</strong></div>
+                        <div><span>Languages</span><strong>Chinese · English · Hungarian</strong></div>
+                    </div>
+                </div>
+            </div>
             <div class="hero-actions">
                 <a class="action-card action-card--work" href="#work">
                     <small>01 · PORTFOLIO</small><strong>View selected work</strong><span>↓</span>
@@ -99,13 +92,13 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about section" id="about">
+    <!-- ABOUT (merged into hero) -->
+    <section class="about section about--merged" aria-hidden="true">
         <div class="section-heading">
             <div class="section-number">01</div>
             <div>
                 <p class="section-kicker">About me</p>
-                <h2>Animation is<br><em>performance.</em></h2>
+                <h2>About me</h2>
             </div>
         </div>
 
@@ -431,6 +424,6 @@
     <a href="#top">Back to top ↑</a>
 </footer>
 
-<script src="script.js"></script>
+<script src="script-v2.js?v=20260819-3"></script>
 </body>
 </html>

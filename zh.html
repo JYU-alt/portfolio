@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-v2.css?v=20260819-10">
     <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 
@@ -37,7 +37,7 @@
 <main id="top">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="hero-top">
             <span>角色动画 / 3D艺术 / 视觉叙事</span>
             <div class="hero-location">
@@ -47,28 +47,22 @@
         </div>
 
         <div class="hero-center">
-            <div class="pose-sequence" aria-hidden="true">
-                <svg viewBox="0 0 520 250" role="presentation">
-                    <g class="pose pose--ghost" transform="translate(30 34) rotate(-7 70 100)">
-                        <circle cx="70" cy="24" r="18"/><path d="M70 43 L74 111 M73 64 L28 91 M73 65 L117 48 M74 111 L42 173 M74 111 L112 165"/>
-                    </g>
-                    <g class="pose pose--middle" transform="translate(190 22) rotate(3 70 100)">
-                        <circle cx="70" cy="24" r="18"/><path d="M70 43 L70 111 M70 63 L31 44 M70 63 L112 87 M70 111 L35 160 M70 111 L120 144"/>
-                    </g>
-                    <g class="pose pose--key" transform="translate(355 25) rotate(8 70 100)">
-                        <circle cx="70" cy="24" r="18"/><path d="M70 43 L66 111 M68 65 L27 93 M68 65 L119 72 M66 111 L23 144 M66 111 L101 178"/>
-                    </g>
-                </svg>
-                <span>关键姿势 · 中间姿势 · 最终姿势</span>
-            </div>
-            <p class="eyebrow"><span class="palette-dot"></span> 动画作品集 · 2026</p>
+            <p class="eyebrow"><span class="palette-dot"></span> 01 · 关于我</p>
             <h1>
                 <span>Jiayu</span>
                 <span class="outline">Zhao</span>
             </h1>
-            <p class="hero-description">
-                专注角色动画与3D艺术，通过有感染力的表演、<br>可信的动作来赋予角色生命。
-            </p>
+            <div class="hero-about">
+                <div class="hero-about-copy">
+                    <p class="hero-about-lead">我希望创作以角色为核心的动画，让动作、情感与故事相互支撑。</p>
+                    <p>我是赵佳玉，目前就读于中国传媒大学3D动画方向，预计于2028年7月毕业。我出生于布达佩斯，现往返于北京与布达佩斯之间。跨文化成长经历让我能够从不同视角理解视觉叙事，并能使用中文、英文和匈牙利语工作。</p>
+                    <p class="hero-about-detail">我的重点方向是角色动画，包括观察表演、打磨身体力学以及塑造可信的角色演绎。同时，我接触过建模、绑定、材质、灯光与后期制作，对完整3D流程有整体认识。我正在寻找角色动画与3D艺术相关实习，希望在项目中贡献能力、持续学习并成长。</p>
+                    <div class="hero-about-meta">
+                        <div><span>常驻城市</span><strong>北京 · 布达佩斯</strong></div>
+                        <div><span>语言</span><strong>中文 · 英文 · 匈牙利语</strong></div>
+                    </div>
+                </div>
+            </div>
             <div class="hero-actions">
                 <a class="action-card action-card--work" href="#work">
                     <small>01 · 作品集</small><strong>查看精选作品</strong><span>↓</span>
@@ -98,13 +92,13 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about section" id="about">
+    <!-- ABOUT（已合并至首屏） -->
+    <section class="about section about--merged" aria-hidden="true">
         <div class="section-heading">
             <div class="section-number">01</div>
             <div>
                 <p class="section-kicker">关于我</p>
-                <h2>动画就是<br><em>表演。</em></h2>
+                <h2>关于我</h2>
             </div>
         </div>
 
@@ -425,6 +419,6 @@
     <a href="#top">返回顶部 ↑</a>
 </footer>
 
-<script src="script.js"></script>
+<script src="script-v2.js?v=20260819-3"></script>
 </body>
 </html>
